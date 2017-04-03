@@ -1,0 +1,36 @@
+package org.neurovillage.model;
+
+public class NFBProcessor implements Task
+{
+	private FeedbackSettings feedbackSettings = null;
+
+	public NFBProcessor(FeedbackSettings feedbackSettings)
+	{
+		setFeedbackSettings(feedbackSettings);
+	}
+	
+	public void setFeedbackSettings(FeedbackSettings feedbackSettings)
+	{
+		this.feedbackSettings = feedbackSettings;
+	}
+
+	@Override
+	public void run()
+	{
+		if (feedbackSettings!=null)
+			feedbackSettings.updateFeedback();
+	}
+
+	@Override
+	public void init()
+	{
+		
+	}
+
+	@Override
+	public void stop()
+	{
+		
+	}
+
+}
